@@ -151,7 +151,7 @@ export default function Hero() {
             <a href="#projects" className="btn-primary">
               View Featured Work <ArrowRight size={18} />
             </a>
-            <a href="/resume.pdf" target="_blank" rel="noreferrer" className="btn-secondary">
+            <a href="https://drive.google.com/file/d/1xGaalmK38J-D7yqqvbfINR_RKUYTp_NS/view?usp=drive_link" target="_blank" rel="noreferrer" className="btn-secondary">
               <Download size={18} /> Download Resume
             </a>
           </div>
