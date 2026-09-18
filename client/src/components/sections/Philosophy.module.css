@@ -1,0 +1,44 @@
+/* client/src/components/sections/Philosophy.module.css */
+.section {
+  padding: 120px 0 100px 0;
+  position: relative;
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+  max-width: 960px;
+}
+
+.statement {
+  font-family: var(--font-sans);
+  font-size: clamp(2.5rem, 6.5vw, 5rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  color: var(--fg-subtle);
+  user-select: none;
+}
+
+.word {
+  display: inline-block;
+  color: var(--fg-subtle);
+  transition: color 0.15s ease;
+  margin: 0 0.12em;
+}
+
+.subtext {
+  margin-top: 24px;
+  font-family: var(--font-mono);
+  font-size: clamp(0.875rem, 1.4vw, 1.125rem);
+  color: var(--fg-subtle);
+  letter-spacing: 0.05em;
+}

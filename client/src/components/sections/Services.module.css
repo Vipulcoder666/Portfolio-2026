@@ -1,0 +1,107 @@
+/* client/src/components/sections/Services.module.css */
+.section {
+  padding: 100px 0;
+  position: relative;
+  background-color: var(--bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+  position: relative;
+  transition: border-color 0.2s ease, transform 0.2s var(--ease-expo);
+}
+
+.card:hover {
+  border-color: var(--border-interactive);
+  transform: translateY(-4px);
+}
+
+.featuredCard {
+  border-color: var(--accent);
+  background-color: rgba(255, 91, 31, 0.02);
+}
+
+.featuredBadge {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  background-color: var(--accent);
+  color: #000;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tagline {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.serviceName {
+  font-family: var(--font-sans);
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--fg);
+  line-height: 1.25;
+}
+
+.description {
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+  line-height: 1.5;
+}
+
+.featuresList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: var(--fg);
+  line-height: 1.4;
+}
+
+.bullet {
+  color: var(--accent);
+  margin-top: 1px;
+}

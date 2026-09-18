@@ -1,16 +1,22 @@
-# React + Vite
+# Vipul.dev — Portfolio 2026
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Modern, high-performance portfolio for Vipul Shrivastav built with React 19, Vite, GSAP (ScrollTrigger & SplitText), Framer Motion, Lenis smooth scrolling, and CSS Modules with custom design tokens.
 
-Currently, two official plugins are available:
+## Media Optimization Note
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Project images are located in `public/assets/images/`.
+To generate optimized WebP and AVIF assets alongside the JPG fallbacks for production:
 
-## React Compiler
+```bash
+# Using cwebp / avifenc or sharp-cli:
+npx sharp-cli -i public/assets/images/*.jpg -o public/assets/images/ -f webp -q 85
+npx sharp-cli -i public/assets/images/*.jpg -o public/assets/images/ -f avif -q 80
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+`<picture>` tags in `src/components/sections/Work.jsx` automatically serve AVIF / WebP when available with JPG fallback.
 
-## Expanding the Oxlint configuration
+## Development & Verification
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- Dev Server: `npm run dev`
+- Linting: `npx oxlint` (zero warnings configured)
+- Production Build: `npm run build`

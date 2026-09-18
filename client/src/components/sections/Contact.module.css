@@ -1,0 +1,255 @@
+/* client/src/components/sections/Contact.module.css */
+.section {
+  padding: 100px 0 140px 0;
+  position: relative;
+  background-color: var(--bg);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr 1.15fr;
+    gap: 80px;
+    align-items: flex-start;
+  }
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.emailCard {
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.emailDisplay {
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 2.5vw, 1.375rem);
+  font-weight: 500;
+  color: var(--fg);
+  word-break: break-all;
+  user-select: all;
+}
+
+.emailActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.copyButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 8px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--fg);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.copyButton:hover {
+  background-color: var(--bg-subtle);
+  border-color: var(--border-interactive);
+}
+
+.copySuccess {
+  color: var(--status-green);
+}
+
+.socialsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.socialLink {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--fg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.socialLink:hover {
+  border-color: var(--border-interactive);
+  transform: translateY(-2px);
+}
+
+/* Form Container */
+.formContainer {
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 640px) {
+  .formContainer {
+    padding: 40px;
+  }
+}
+
+.segmentedWrapper {
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+}
+
+.input, .select, .textarea {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  color: var(--fg);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.inputError {
+  border-color: #EF4444 !important;
+}
+
+.errorText {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: #EF4444;
+}
+
+.twoCols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .twoCols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Honeypot hidden input */
+.honeypot {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  width: 0;
+}
+
+.submitButton {
+  margin-top: 8px;
+  width: 100%;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Confirmation and Error cards */
+.feedbackCard {
+  text-align: center;
+  padding: 48px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.successIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--status-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.errorBanner {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  font-size: 0.875rem;
+  color: #FCA5A5;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.errorBanner a {
+  color: #FFF;
+  text-decoration: underline;
+}

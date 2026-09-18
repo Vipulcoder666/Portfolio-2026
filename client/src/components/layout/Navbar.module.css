@@ -1,0 +1,161 @@
+/* client/src/components/layout/Navbar.module.css */
+.header {
+  position: fixed;
+  top: 16px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  padding: 0 16px;
+}
+
+.nav {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background-color: rgba(18, 18, 21, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 6px 8px 6px 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.2s ease;
+}
+
+.nav:hover {
+  border-color: var(--border-interactive);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  padding-right: 8px;
+}
+
+.brandDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+.links {
+  display: none;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+
+@media (min-width: 900px) {
+  .links {
+    display: flex;
+  }
+}
+
+.link {
+  position: relative;
+  text-decoration: none;
+  font-size: 0.8125rem;
+  color: var(--fg-muted);
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  transition: color 0.15s ease;
+}
+
+.link:hover {
+  color: var(--fg);
+}
+
+.activeLink {
+  color: var(--fg);
+  background-color: var(--bg-surface);
+}
+
+.rightGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.timeBadge {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--fg-subtle);
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+}
+
+@media (min-width: 1024px) {
+  .timeBadge {
+    display: inline-flex;
+  }
+}
+
+.mobileMenuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  cursor: pointer;
+}
+
+@media (min-width: 900px) {
+  .mobileMenuButton {
+    display: none;
+  }
+}
+
+/* Mobile Dropdown Menu */
+.mobileDrawer {
+  position: fixed;
+  top: 76px;
+  left: 16px;
+  right: 16px;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-interactive);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1001;
+  pointer-events: auto;
+}
+
+.mobileLink {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--fg-muted);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.mobileLink:hover, .mobileActiveLink {
+  color: var(--fg);
+  background-color: var(--bg-surface);
+}

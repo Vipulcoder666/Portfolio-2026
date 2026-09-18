@@ -1,0 +1,563 @@
+/* client/src/components/sections/Work.module.css */
+.section {
+  padding: 100px 0 120px 0;
+  position: relative;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  position: relative;
+}
+
+.card {
+  position: sticky;
+  width: 100%;
+  max-height: min(calc(100svh - var(--nav-height) - 32px), 740px);
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr;
+  transform-origin: center top;
+  will-change: transform, filter;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--border-interactive);
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width: 1024px) {
+  .card {
+    grid-template-columns: 380px 1fr;
+  }
+}
+
+.mediaWrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background-color: var(--bg-surface);
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .mediaWrapper {
+    height: 100%;
+    min-height: 100%;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease-expo);
+}
+
+.card:hover .image {
+  transform: scale(1.04);
+}
+
+.mediaOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 10, 11, 0.05) 0%, rgba(10, 10, 11, 0.7) 100%);
+  pointer-events: none;
+}
+
+.contentWrapper {
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  position: relative;
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  .contentWrapper {
+    padding: 28px 32px;
+  }
+}
+
+.topMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.metaLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.indexLabel {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--fg-subtle);
+  letter-spacing: 0.05em;
+}
+
+.clientLabel {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.statusBadge {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--fg-muted);
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cardTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1.25rem, 2.2vw, 1.625rem);
+  font-weight: 600;
+  color: var(--fg);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.outcome {
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+  line-height: 1.45;
+}
+
+/* Engineering Highlights Box */
+.highlightsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background-color: rgba(20, 20, 24, 0.7);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+}
+
+.highlightsHeading {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.highlightsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: var(--fg);
+  line-height: 1.45;
+}
+
+.bulletSymbol {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Tech badges */
+.techTagsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.techBadge {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--fg-muted);
+}
+
+.bottomCardRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  flex-wrap: wrap;
+}
+
+.metricsRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 12px;
+  flex: 1;
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metricItemLabel {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--fg-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.metricItemValue {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.metricItemContext {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  color: var(--fg-muted);
+}
+
+.openLinkBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--accent);
+  background-color: var(--accent-subtle);
+  border: 1px solid rgba(255, 91, 31, 0.25);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover .openLinkBadge {
+  background-color: var(--accent);
+  color: #000;
+  font-weight: 600;
+}
+
+/* Dark stack overlay layer driven by GSAP scroll scrubbing */
+.darkStackOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.1s linear;
+}
+
+/* ============================================================
+   Case Study Modal Overlay (Rendered in React Portal on body)
+============================================================ */
+.overlayBackdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(6, 6, 8, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 200000;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+@media (max-height: 680px) {
+  .overlayBackdrop {
+    align-items: flex-start;
+    padding: 16px;
+  }
+}
+
+.modalContent {
+  width: 100%;
+  max-width: 1060px;
+  max-height: min(760px, calc(100vh - 36px));
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-interactive);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  box-shadow: 0 32px 96px rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeader {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background-color: rgba(18, 18, 21, 0.98);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.modalHeaderLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.modalHeaderMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.modalTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  font-weight: 600;
+  color: var(--fg);
+  line-height: 1.25;
+}
+
+.closeButton {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--fg);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.closeButton:hover {
+  background-color: var(--bg-subtle);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.modalBody {
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  overflow-y: auto;
+  flex: 1;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+}
+
+.modalBody::-webkit-scrollbar {
+  width: 5px;
+}
+
+.modalBody::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modalBody::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+}
+
+.modalBody::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 91, 31, 0.6);
+}
+
+@media (min-width: 900px) {
+  .modalBody {
+    grid-template-columns: 340px 1fr;
+    gap: 28px;
+    padding: 20px 24px;
+    align-items: start;
+  }
+}
+
+@media (max-height: 720px) {
+  .overlayBackdrop {
+    align-items: center;
+    padding: 12px;
+  }
+
+  .modalHeader {
+    padding: 10px 18px;
+  }
+
+  .modalBody {
+    padding: 14px 18px;
+    gap: 20px;
+  }
+}
+
+.modalLeftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modalHeroMedia {
+  width: 100%;
+  height: 165px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background-color: var(--bg-surface);
+  flex-shrink: 0;
+}
+
+.modalHeroMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modalMetricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 8px;
+}
+
+.metricCard {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.modalTechGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modalRightCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modalSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modalSectionTitle {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.modalSectionContent {
+  font-size: 0.8125rem;
+  color: var(--fg-muted);
+  line-height: 1.5;
+}
+
+.modalList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modalListItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: var(--fg);
+  line-height: 1.45;
+}
+
+.modalBullet {
+  color: var(--accent);
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.techTag {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--fg);
+}
+
+.modalFooterRow {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}

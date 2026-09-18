@@ -1,0 +1,10 @@
+/* client/src/components/ui/RevealText.module.css */
+.wrapper {
+  display: block;
+  position: relative;
+}
+
+.line {
+  overflow: hidden;
+  display: block;
+}

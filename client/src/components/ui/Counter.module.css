@@ -1,0 +1,6 @@
+/* client/src/components/ui/Counter.module.css */
+.counter {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  display: inline-block;
+}

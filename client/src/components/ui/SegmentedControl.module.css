@@ -1,0 +1,48 @@
+/* client/src/components/ui/SegmentedControl.module.css */
+.container {
+  display: inline-flex;
+  padding: 4px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  position: relative;
+  gap: 2px;
+}
+
+.button {
+  position: relative;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  color: var(--fg-muted);
+  cursor: pointer;
+  transition: color 0.15s ease;
+  z-index: 1;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button:hover {
+  color: var(--fg);
+}
+
+.activeButton {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+.indicator {
+  position: absolute;
+  inset: 0;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-interactive);
+  border-radius: var(--radius-full);
+  z-index: -1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}

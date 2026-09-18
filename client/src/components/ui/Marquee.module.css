@@ -1,0 +1,86 @@
+/* client/src/components/ui/Marquee.module.css */
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  user-select: none;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bg-elevated);
+  padding: 16px 0;
+  position: relative;
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-elevated), transparent);
+}
+
+.wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-elevated), transparent);
+}
+
+.track {
+  display: flex;
+  flex-shrink: 0;
+  gap: 32px;
+  animation: marquee 35s linear infinite;
+  align-items: center;
+}
+
+.wrapper:hover .track {
+  animation-play-state: paused;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+
+.item:hover {
+  color: var(--fg);
+}
+
+.separator {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  opacity: 0.6;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    overflow-x: auto;
+    width: 100%;
+  }
+}
